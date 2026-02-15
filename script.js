@@ -1,21 +1,57 @@
 (function () {
+  const loader = document.getElementById("page-loader");
+  window.addEventListener("load", function () {
+    if (!loader) return;
+    setTimeout(function () {
+      loader.classList.add("is-hidden");
+      setTimeout(function () {
+        loader.remove();
+      }, 500);
+    }, 500);
+  });
+
   const key = "vbs-cookie-pref";
   const banner = document.getElementById("cookie-banner");
-  if (!banner) return;
+  if (banner) {
+    const saved = localStorage.getItem(key);
+    if (saved) {
+      banner.style.display = "none";
+    }
 
-  const saved = localStorage.getItem(key);
-  if (saved) {
-    banner.style.display = "none";
-    return;
+    function closeWith(value) {
+      localStorage.setItem(key, value);
+      banner.style.display = "none";
+    }
+
+    const accept = document.getElementById("cookie-accept");
+    const decline = document.getElementById("cookie-decline");
+    if (accept) accept.addEventListener("click", function () { closeWith("accepted"); });
+    if (decline) decline.addEventListener("click", function () { closeWith("declined"); });
   }
 
-  function closeWith(value) {
-    localStorage.setItem(key, value);
-    banner.style.display = "none";
-  }
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      if (formStatus) formStatus.textContent = "Sending your message...";
 
-  const accept = document.getElementById("cookie-accept");
-  const decline = document.getElementById("cookie-decline");
-  if (accept) accept.addEventListener("click", function () { closeWith("accepted"); });
-  if (decline) decline.addEventListener("click", function () { closeWith("declined"); });
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          if (formStatus) formStatus.textContent = "Thanks. Your message has been sent.";
+        } else {
+          if (formStatus) formStatus.textContent = "Message not sent. Please try again.";
+        }
+      } catch (error) {
+        if (formStatus) formStatus.textContent = "Network error. Please try again.";
+      }
+    });
+  }
 })();

@@ -8,10 +8,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="page-loader__orb"></div>
+    <div class="page-loader__text">Loading Virtual Base Solutions...</div>
+  </div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img class="brand-logo" src="assets/logo-main.webp" alt="Virtual Base Solutions logo" />
+        <img class="brand-logo" src="assets/logo.png" alt="Virtual Base Solutions logo" />
         <span class="brand-name">Virtual Base Solutions</span>
       </a>
       <nav class="nav">
@@ -46,17 +50,23 @@
 
         <article class="card contact-form">
           <h3>Quick Inquiry</h3>
-          <form action="mailto:info@virtualbasesolutions.com" method="post" enctype="text/plain">
+          <form id="contact-form" action="https://formspree.io/f/mreaqyyj" method="POST">
             <label class="field">Name
               <input type="text" name="name" required />
             </label>
             <label class="field">Email
               <input type="email" name="email" required />
             </label>
+            <label class="field" style="display:none;">
+              Company
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </label>
             <label class="field">Message
               <textarea name="message" rows="6" required></textarea>
             </label>
+            <input type="hidden" name="_subject" value="New Virtual Base Solutions inquiry" />
             <button class="cta-btn" type="submit">Send Message</button>
+            <p id="form-status" class="small" aria-live="polite" style="margin-top: 12px;"></p>
           </form>
         </article>
       </div>
@@ -68,7 +78,7 @@
       <div>
         <p class="small"><strong>Virtual Base Solutions</strong></p>
         <p class="small">Use of this website constitutes acceptance of our <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>. Service timelines and outcomes depend on scope, onboarding quality, and client-side collaboration.</p>
-        <p class="small">Built by JCIT Services. Get your own site build: <a href="https://jcit.digital" target="_blank" rel="noopener">jcit.digital</a>.</p>
+        <p class="small">Built by JCIT Services. Get your own site here: <a href="https://jcit.digital" target="_blank" rel="noopener">https://jcit.digital</a>.</p>
       </div>
       <div>
         <p class="small"><strong>Contact</strong><br />info@virtualbasesolutions.com</p>
