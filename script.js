@@ -33,13 +33,26 @@
   const key = "vbs-cookie-pref";
   const banner = document.getElementById("cookie-banner");
   if (banner) {
+    function updateConsentMode(value) {
+      if (typeof window.gtag !== "function") return;
+      const granted = value === "accepted";
+      window.gtag("consent", "update", {
+        ad_storage: granted ? "granted" : "denied",
+        analytics_storage: granted ? "granted" : "denied",
+        ad_user_data: granted ? "granted" : "denied",
+        ad_personalization: granted ? "granted" : "denied"
+      });
+    }
+
     const saved = localStorage.getItem(key);
     if (saved) {
+      updateConsentMode(saved);
       banner.style.display = "none";
     }
 
     function closeWith(value) {
       localStorage.setItem(key, value);
+      updateConsentMode(value);
       banner.style.display = "none";
     }
 
