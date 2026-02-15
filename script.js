@@ -1,4 +1,24 @@
 (function () {
+  const revealTargets = document.querySelectorAll(".hero, .section, .site-footer");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealTargets.forEach(function (element) {
+      observer.observe(element);
+    });
+  } else {
+    revealTargets.forEach(function (element) {
+      element.classList.add("is-visible");
+    });
+  }
+
   const loader = document.getElementById("page-loader");
   window.addEventListener("load", function () {
     if (!loader) return;

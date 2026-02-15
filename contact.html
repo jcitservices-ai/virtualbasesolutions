@@ -3,26 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Virtual Base Solutions</title>
-  <meta name="description" content="Contact Virtual Base Solutions for remote sales staffing and virtual team support." />
+  <title>Contact Virtual Sales Team | Virtual βase Solutions</title>
+  <meta name="description" content="Contact Virtual βase Solutions for conversion-focused virtual sales staffing, virtual consultation, and dedicated virtual team support." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://virtualbasesolutions.com/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Virtual βase Solutions" />
+  <meta property="og:title" content="Contact Virtual Sales Team | Virtual βase Solutions" />
+  <meta property="og:description" content="Book a virtual consultation and get a recommended virtual sales setup for your conversion goals." />
+  <meta property="og:url" content="https://virtualbasesolutions.com/contact.html" />
+  <meta property="og:image" content="https://virtualbasesolutions.com/assets/logo1-optimized.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Virtual Sales Team | Virtual βase Solutions" />
+  <meta name="twitter:description" content="Book a virtual consultation and get a recommended virtual sales setup for your conversion goals." />
+  <meta name="twitter:image" content="https://virtualbasesolutions.com/assets/logo1-optimized.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Virtual βase Solutions",
+    "url": "https://virtualbasesolutions.com/contact.html",
+    "email": "info@virtualbasesolutions.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "736 Sonoma, Sta Cruz",
+      "addressLocality": "Manila",
+      "addressCountry": "PH",
+      "postalCode": "3022"
+    }
+  }
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div id="page-loader" class="page-loader" aria-hidden="true">
     <div class="page-loader__orb"></div>
-    <div class="page-loader__text">Loading Virtual Base Solutions...</div>
+    <div class="page-loader__text">Loading Virtual βase Solutions...</div>
   </div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img class="brand-logo" src="assets/logo.png" alt="Virtual Base Solutions logo" />
-        <span class="brand-name">Virtual Base Solutions</span>
+        <img class="brand-logo" src="assets/logo-nav.png" alt="Virtual βase Solutions logo" width="160" height="160" />
+        <span class="brand-name">Virtual βase Solutions</span>
       </a>
       <nav class="nav">
         <a href="index.html">About</a>
         <a href="services.html">Services</a>
         <a href="team.html">Meet the Team</a>
         <a class="active" href="contact.html">Contact Us</a>
+      <div class="social-nav">
+          <a class="social-icon social-icon-linkedin" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="sr-only">LinkedIn</span></a>
+          <a class="social-icon social-icon-instagram" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><span class="sr-only">Instagram</span></a>
+          <a class="social-icon social-icon-facebook" href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><span class="sr-only">Facebook</span></a>
+        </div>
       </nav>
     </div>
   </header>
@@ -32,7 +65,8 @@
       <div class="container">
         <span class="badge">Let’s Talk</span>
         <h1>Contact Us</h1>
-        <p class="lead">Interested in working together? Share your goals and we will get in touch shortly.</p>
+        <p class="lead">Interested in working together? Share your virtual sales goals and we will get in touch shortly.</p>
+        <a class="cta-btn" href="#contact-form">Start With a Free Consultation</a>
       </div>
     </section>
 
@@ -45,7 +79,15 @@
             <div><strong>Location:</strong> 736 Sonoma, Sta Cruz, Manila, Philippines 3022</div>
             <div><strong>Hours:</strong> Monday to Friday, 9:00 AM - 6:00 PM (PHT)</div>
           </div>
-          <p class="lead">For faster response, include your company name, current sales process, and monthly lead targets.</p>
+          <p class="lead">For faster response, include your company name, current virtual sales process, and monthly lead and conversion targets.</p>
+          <div class="map-wrap">
+            <iframe
+              title="Virtual βase Solutions location map"
+              src="https://www.google.com/maps?q=736%20Sonoma%2C%20Sta%20Cruz%2C%20Manila%2C%20Philippines%203022&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </article>
 
         <article class="card contact-form">
@@ -57,6 +99,19 @@
             <label class="field">Email
               <input type="email" name="email" required />
             </label>
+            <label class="field">Phone Number
+              <input type="tel" name="phone" placeholder="+1 (555) 123-4567" />
+            </label>
+            <label class="field">Type of Inquiry
+              <select name="inquiry_type" required>
+                <option value="">Select inquiry type</option>
+                <option value="sales-appointment-setters">Sales Appointment Setters</option>
+                <option value="outbound-sales-reps">Outbound Sales Reps</option>
+                <option value="dedicated-virtual-team">Dedicated Virtual Team</option>
+                <option value="virtual-sales-consultation">Virtual Sales Consultation</option>
+                <option value="general-question">General Virtual Inquiry</option>
+              </select>
+            </label>
             <label class="field" style="display:none;">
               Company
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
@@ -64,7 +119,7 @@
             <label class="field">Message
               <textarea name="message" rows="6" required></textarea>
             </label>
-            <input type="hidden" name="_subject" value="New Virtual Base Solutions inquiry" />
+            <input type="hidden" name="_subject" value="New Virtual βase Solutions inquiry" />
             <button class="cta-btn" type="submit">Send Message</button>
             <p id="form-status" class="small" aria-live="polite" style="margin-top: 12px;"></p>
           </form>
@@ -76,12 +131,17 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <p class="small"><strong>Virtual Base Solutions</strong></p>
+        <p class="small"><strong>Virtual βase Solutions</strong></p>
         <p class="small">Use of this website constitutes acceptance of our <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>. Service timelines and outcomes depend on scope, onboarding quality, and client-side collaboration.</p>
-        <p class="small">Built by JCIT Services. Get your own site here: <a href="https://jcit.digital" target="_blank" rel="noopener">https://jcit.digital</a>.</p>
+        <p class="small">Website Built by JCIT Services. <a class="footer-cta-btn" href="https://jcit.digital" target="_blank" rel="noopener">Get your website here</a>.</p>
       </div>
       <div>
         <p class="small"><strong>Contact</strong><br />info@virtualbasesolutions.com</p>
+        <p class="small social-footer">
+          <a class="social-icon social-icon-linkedin" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="sr-only">LinkedIn</span></a>
+          <a class="social-icon social-icon-instagram" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><span class="sr-only">Instagram</span></a>
+          <a class="social-icon social-icon-facebook" href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><span class="sr-only">Facebook</span></a>
+        </p>
       </div>
     </div>
   </footer>
