@@ -32,27 +32,52 @@
 
   const key = "vbs-cookie-pref";
   const banner = document.getElementById("cookie-banner");
-  if (banner) {
-    function updateConsentMode(value) {
-      if (typeof window.gtag !== "function") return;
-      const granted = value === "accepted";
-      window.gtag("consent", "update", {
-        ad_storage: granted ? "granted" : "denied",
-        analytics_storage: granted ? "granted" : "denied",
-        ad_user_data: granted ? "granted" : "denied",
-        ad_personalization: granted ? "granted" : "denied"
-      });
-    }
+  function updateConsentMode(value) {
+    if (typeof window.gtag !== "function") return;
+    const granted = value === "accepted";
+    window.gtag("consent", "update", {
+      ad_storage: granted ? "granted" : "denied",
+      analytics_storage: granted ? "granted" : "denied",
+      ad_user_data: granted ? "granted" : "denied",
+      ad_personalization: granted ? "granted" : "denied"
+    });
+  }
 
+  function updateConsentGatedMedia(value) {
+    const hasConsent = value === "accepted";
+    document.querySelectorAll("[data-consent-src]").forEach(function (element) {
+      const consentSrc = element.getAttribute("data-consent-src");
+      if (!consentSrc) return;
+
+      if (hasConsent) {
+        if (element.getAttribute("src") !== consentSrc) {
+          element.setAttribute("src", consentSrc);
+        }
+      } else if (element.tagName === "IFRAME") {
+        element.removeAttribute("src");
+      }
+
+      const gate = element.closest(".consent-gated");
+      if (gate) {
+        gate.classList.toggle("is-consented", hasConsent);
+      }
+    });
+  }
+
+  if (banner) {
     const saved = localStorage.getItem(key);
     if (saved) {
       updateConsentMode(saved);
+      updateConsentGatedMedia(saved);
       banner.style.display = "none";
+    } else {
+      updateConsentGatedMedia("declined");
     }
 
     function closeWith(value) {
       localStorage.setItem(key, value);
       updateConsentMode(value);
+      updateConsentGatedMedia(value);
       banner.style.display = "none";
     }
 
@@ -60,6 +85,14 @@
     const decline = document.getElementById("cookie-decline");
     if (accept) accept.addEventListener("click", function () { closeWith("accepted"); });
     if (decline) decline.addEventListener("click", function () { closeWith("declined"); });
+
+    document.querySelectorAll(".consent-accept-btn").forEach(function (button) {
+      button.addEventListener("click", function () {
+        closeWith("accepted");
+      });
+    });
+  } else {
+    updateConsentGatedMedia(localStorage.getItem(key) || "declined");
   }
 
   const contactForm = document.getElementById("contact-form");

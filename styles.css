@@ -326,15 +326,15 @@ a:hover {
 }
 
 .social-icon-linkedin {
-  background-image: url("https://cdn.simpleicons.org/linkedin/0A66C2");
+  background-image: url("assets/icon-linkedin.svg");
 }
 
 .social-icon-instagram {
-  background-image: url("https://cdn.simpleicons.org/instagram/E4405F");
+  background-image: url("assets/icon-instagram.svg");
 }
 
 .social-icon-facebook {
-  background-image: url("https://cdn.simpleicons.org/facebook/1877F2");
+  background-image: url("assets/icon-facebook.svg");
 }
 
 .cta-btn {
@@ -582,6 +582,32 @@ h1 {
   display: block;
 }
 
+.consent-gated {
+  position: relative;
+}
+
+.consent-lock {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 18px;
+  background: rgba(6, 16, 28, 0.9);
+  color: #d9ecff;
+}
+
+.consent-lock .small {
+  margin: 0;
+}
+
+.consent-gated.is-consented .consent-lock {
+  display: none;
+}
+
 .field {
   display: block;
   margin-bottom: 12px;
@@ -601,6 +627,13 @@ h1 {
 
 .field textarea {
   border-radius: 28px;
+}
+
+.field input[type="checkbox"],
+.field input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+  accent-color: #2c6da4;
 }
 
 .field input::placeholder,
