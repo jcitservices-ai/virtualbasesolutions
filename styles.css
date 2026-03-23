@@ -591,12 +591,29 @@ h1 {
 }
 
 .founder-card {
-  padding: 24px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.founder-card-copy {
+  padding: 26px;
 }
 
 .founder-card h4 {
   margin: 0 0 10px;
   color: #f1f7ff;
+}
+
+.founder-card .role {
+  margin-bottom: 14px;
+}
+
+.founder-photo {
+  height: 430px;
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 34px 34px 0 0;
+  object-fit: cover;
 }
 
 .founder-block {
@@ -892,6 +909,10 @@ h1 {
     height: 180px;
   }
 
+  .founder-photo {
+    height: 340px;
+  }
+
   .cookie-banner {
     right: 10px;
     left: 10px;
@@ -930,8 +951,16 @@ h1 {
     padding: 18px;
   }
 
+  .founder-card-copy {
+    padding: 20px;
+  }
+
   .service-card-media {
     height: 220px;
+  }
+
+  .founder-photo {
+    height: 280px;
   }
 }
 
