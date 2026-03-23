@@ -586,6 +586,38 @@ h1 {
   gap: 20px;
 }
 
+.founder-intro {
+  padding: 28px;
+}
+
+.founder-card {
+  padding: 24px;
+}
+
+.founder-card h4 {
+  margin: 0 0 10px;
+  color: #f1f7ff;
+}
+
+.founder-block {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(142, 176, 212, 0.18);
+}
+
+.founder-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.team-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
 .team-photo {
   width: 100%;
   height: 220px;
@@ -813,6 +845,7 @@ h1 {
   .service-card-grid,
   .proof-grid,
   .team-grid,
+  .team-focus-grid,
   .contact-grid,
   .footer-grid,
   .feedback-grid {
