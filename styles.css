@@ -368,6 +368,13 @@ a:hover {
   align-items: center;
 }
 
+.services-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 30px;
+  align-items: center;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -432,6 +439,72 @@ h1 {
 
 .section {
   padding: 30px 0 70px;
+}
+
+.services-intro,
+.services-cta-panel {
+  padding: 28px;
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #ffd79c;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.service-section {
+  display: grid;
+  gap: 22px;
+}
+
+.service-section-head {
+  max-width: 860px;
+}
+
+.service-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.service-card-media {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid rgba(142, 176, 212, 0.2);
+}
+
+.service-card-body {
+  padding: 22px;
+}
+
+.service-tag {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(243, 156, 18, 0.16);
+  color: #ffd79c;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.service-outcome {
+  margin-top: 14px;
+  color: #d5ebff !important;
+  font-weight: 700;
 }
 
 .grid-3 {
@@ -735,7 +808,9 @@ h1 {
 
 @media (max-width: 900px) {
   .hero-grid,
+  .services-hero-grid,
   .grid-3,
+  .service-card-grid,
   .proof-grid,
   .team-grid,
   .contact-grid,
@@ -746,6 +821,10 @@ h1 {
 
   .hero {
     padding: 66px 0 36px;
+  }
+
+  .service-card-media {
+    height: 240px;
   }
 
   .header-inner {
@@ -812,6 +891,14 @@ h1 {
 
   .hero-card img {
     max-height: 300px;
+  }
+
+  .service-card-body {
+    padding: 18px;
+  }
+
+  .service-card-media {
+    height: 220px;
   }
 }
 
